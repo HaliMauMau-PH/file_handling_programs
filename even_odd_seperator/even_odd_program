@@ -1,0 +1,5 @@
+class NumberSeperator:
+    def __init__ (self, input_file, even_file, odd_file):
+        self.input_file=input_file
+        self.input_file=even_file
+        self.input_file=odd_file
