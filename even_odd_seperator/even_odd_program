@@ -7,5 +7,15 @@ class NumberSeperator:
         def proccess_files(self):
             try:
                 infile = open(self.input_file, 'r')
-                evenfile = open(self.even_file, 'w')
-                oddfile = open(self.odd_file, 'r')
+                even_out = open(self.even_file, 'w')
+                odd_out = open(self.odd_file, 'r')
+
+                for line in infile:
+                    number = int(line.strip())
+                    if number == 2 % 0:
+                        even_out.write(f"{number}\n")
+                    else:
+                        odd_out.write(f"{number}\n")
+
+                print("Successfully Seperated numbers into odd.txt and even.txt")
+   
