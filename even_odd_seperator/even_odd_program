@@ -5,6 +5,10 @@ class NumberSeperator:
         self.even_file=even_file
         self.odd_file=odd_file
 
+        self.even_count = 0
+        self.odd_count = 0
+        self.highest_even = 0
+        
     def generate_input_file(self):
         print(f"Generating a file with 20 random numbers in {self.input_file}")
         with open(self.input_file, 'w') as f:
@@ -22,8 +26,12 @@ class NumberSeperator:
                     number = int(line.strip())
                     if number % 2 == 0:
                         even_out.write(f"{number}\n")
+                        self.even_count += 1
+                        if number > self.highest_even:
+                             self.highest_even = number
                     else:
                         odd_out.write(f"{number}\n")
+                        self.odd_count += 1
 
                 print("Successfully Seperated numbers into odd.txt and even.txt")
 
