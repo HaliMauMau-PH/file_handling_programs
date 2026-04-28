@@ -28,6 +28,6 @@ class NumberSeperator:
             except ValueError:
                 print("Error: the file contains non-integer values.")
 
-if __name__ == main:
-    seperator = NumberSeperator("numbers.txt", "even.txt", "odd.txt")
+if __name__ == "__main__":
+    separator = NumberSeperator("numbers.txt", "even.txt", "odd.txt")
     separator.process_files()
