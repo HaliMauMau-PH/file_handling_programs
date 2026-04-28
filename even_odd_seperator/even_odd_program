@@ -11,7 +11,7 @@ class NumberSeperator:
             for _ in range(20):
                 random_num = random.randint(1,100)
                 f.write(f"{random_num}\n")
-                
+
         def proccess_files(self):
             try:
                 infile = open(self.input_file, 'r')
@@ -38,4 +38,7 @@ class NumberSeperator:
 
 if __name__ == "__main__":
     separator = NumberSeperator("numbers.txt", "even.txt", "odd.txt")
+
+    separator.generate_input_file()
+    
     separator.process_files()
