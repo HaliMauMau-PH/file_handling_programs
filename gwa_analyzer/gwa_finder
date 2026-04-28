@@ -4,31 +4,45 @@ class GWAAnalyzer:
     def __init__(self, filename):
         self.filename = filename
 
-def find_highest_gwa(self):
-    highest_gwa = float('inf')
-    top_student = ""
+    def generate_class(self):
+        print(f"Making Class in {self.filename}")
+        with open(self.filename, 'r'):
+            for i in range (1,21):
+                name = f"student_{i}"
+                gwa = round(random.uniform(1.0, 5.0), 2)
+                file.write(f"{name}, {gwa}\n")
+
+    def find_highest_gwa(self):
+        highest_gwa = float('inf')
+        top_student = ""
     
-    try:
-        student_file = open(self.filename, 'r')
+        try:
+            student_file = open(self.filename, 'r')
         
-        for line in student_file:
-            data = line.strip().split(',')
-            if len(data) == 2:
-                name = data[0].strip
-                gwa = float(data[1].strip())
+            for line in student_file:
+                if not line.strip():
+                    continue
                 
-                if gwa < highest_gwa:
-                    highest_gwa = gwa
-                    top_student = name
+                data = line.strip().split(',')
                 
-        student_file.close()
+                if len(data) == 2:
+                    name = data[0].strip
+                    try:
+                        gwa = float(data[1].strip())
+                
+                        if gwa < highest_gwa:
+                            highest_gwa = gwa
+                            top_student = name
+                    except ValueError:
+                        print(f"skipping Invalid GWA for {name}")
+            student_file.close()
         
-        if top_student:
-            print(f"Top Student: {top_student}")
-            print(f"The GWA: {highest_gwa}")
-               
-    except FileNotFoundError:
-        print(f"Error: the file {self.filename} was not found") 
+            if top_student:
+                print(f"Top Student: {top_student}")
+                print(f"The GWA: {highest_gwa}")
+
+        except FileNotFoundError:
+            print(f"Error: the file {self.filename} was not found") 
 
 if __name__ == "__main__":
     analyzer = GWAAnalyzer
