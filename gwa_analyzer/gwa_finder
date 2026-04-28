@@ -6,7 +6,7 @@ class GWAAnalyzer:
 
     def generate_class(self):
         print(f"Making Class in {self.filename}")
-        with open(self.filename, 'r'):
+        with open(self.filename, 'r') as file:
             for i in range (1,21):
                 name = f"student_{i}"
                 gwa = round(random.uniform(1.0, 5.0), 2)
@@ -45,6 +45,9 @@ class GWAAnalyzer:
             print(f"Error: the file {self.filename} was not found") 
 
 if __name__ == "__main__":
-    analyzer = GWAAnalyzer
+    analyzer = GWAAnalyzer("student.txt")
+
+    analyzer.generate_class()
+    
     analyzer.find_highest_gwa()
-                
+              
