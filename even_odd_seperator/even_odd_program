@@ -6,7 +6,12 @@ class NumberSeperator:
         self.input_file=odd_file
 
     def generate_input_file(self):
-
+        print(f"Generating a file with 20 random numbers in {self.input_file}")
+        with open(self.input_file, 'w') as f:
+            for _ in range(20):
+                random_num = random.randint(1,100)
+                f.write(f"{random_num}\n")
+                
         def proccess_files(self):
             try:
                 infile = open(self.input_file, 'r')
