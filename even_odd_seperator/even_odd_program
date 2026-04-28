@@ -3,3 +3,8 @@ class NumberSeperator:
         self.input_file=input_file
         self.input_file=even_file
         self.input_file=odd_file
+
+        def proccess_files(self):
+            infile = open(self.input_file, 'r')
+            evenfile = open(self.even_file, 'w')
+            oddfile = open(self.odd_file, 'r')
