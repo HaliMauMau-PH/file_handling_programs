@@ -2,8 +2,8 @@ import random
 class NumberSeperator:
     def __init__ (self, input_file, even_file, odd_file):
         self.input_file=input_file
-        self.input_file=even_file
-        self.input_file=odd_file
+        self.even_file=even_file
+        self.odd_file=odd_file
 
     def generate_input_file(self):
         print(f"Generating a file with 20 random numbers in {self.input_file}")
@@ -20,7 +20,7 @@ class NumberSeperator:
 
                 for line in infile:
                     number = int(line.strip())
-                    if number == 2 % 0:
+                    if number % 2 == 0:
                         even_out.write(f"{number}\n")
                     else:
                         odd_out.write(f"{number}\n")
