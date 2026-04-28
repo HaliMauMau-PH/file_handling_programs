@@ -1,3 +1,5 @@
+import random
+
 class GWAAnalyzer:
     def __init__(self, filename):
         self.filename = filename
@@ -18,4 +20,17 @@ def find_highest_gwa(self):
                 if gwa < highest_gwa:
                     highest_gwa = gwa
                     top_student = name
-                    
+                
+        student_file.close()
+        
+        if top_student:
+            print(f"Top Student: {top_student}")
+            print(f"The GWA: {highest_gwa}")
+               
+    except FileNotFoundError:
+        print(f"Error: the file {self.filename} was not found") 
+
+if __name__ == "__main__":
+    analyzer = GWAAnalyzer
+    analyzer.find_highest_gwa()
+                
