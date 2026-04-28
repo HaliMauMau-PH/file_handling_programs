@@ -8,7 +8,7 @@ class NumberSeperator:
         self.even_count = 0
         self.odd_count = 0
         self.highest_even = 0
-        
+
     def generate_input_file(self):
         print(f"Generating a file with 20 random numbers in {self.input_file}")
         with open(self.input_file, 'w') as f:
@@ -17,32 +17,42 @@ class NumberSeperator:
                 f.write(f"{random_num}\n")
 
     def process_files(self):
-            try:
-                infile = open(self.input_file, 'r')
-                even_out = open(self.even_file, 'w')
-                odd_out = open(self.odd_file, 'r')
+        try:
+            infile = open(self.input_file, 'r')
+            even_out = open(self.even_file, 'w')
+            odd_out = open(self.odd_file, 'w')
 
-                for line in infile:
+            for line in infile:
+                if not line.strip():
+                    continue
+
+                try:
                     number = int(line.strip())
+                    
+                    
                     if number % 2 == 0:
                         even_out.write(f"{number}\n")
                         self.even_count += 1
                         if number > self.highest_even:
-                             self.highest_even = number
+                            self.highest_even = number
                     else:
                         odd_out.write(f"{number}\n")
                         self.odd_count += 1
 
-                print("Successfully Seperated numbers into odd.txt and even.txt")
+                
 
-                infile.close
-                even_out.close
-                odd_out.close
+                except ValueError:
+                    print("Error: the file contains non-integer values.")
             
-            except FileNotFoundError:
-                print(f"Error: the file {self.input_file} has not been created. Please create it first")
-            except ValueError:
-                print("Error: the file contains non-integer values.")
+            infile.close()
+            even_out.close()
+            odd_out.close()
+            
+            print("Successfully Seperated numbers into odd.txt and even.txt")
+            
+        except FileNotFoundError:
+            print(f"Error: the file {self.input_file} has not been created. Please create it first")
+
         
     def display_summary(self):
             print("\n" + "="*30)
