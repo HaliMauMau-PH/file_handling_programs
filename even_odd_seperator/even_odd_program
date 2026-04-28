@@ -18,4 +18,16 @@ class NumberSeperator:
                         odd_out.write(f"{number}\n")
 
                 print("Successfully Seperated numbers into odd.txt and even.txt")
-   
+
+                infile.close
+                even_out.close
+                odd_out.close
+            
+            except FileNotFoundError:
+                print(f"Error: the file {self.input_file} has not been created. Please create it first")
+            except ValueError:
+                print("Error: the file contains non-integer values.")
+
+if __name__ == main:
+    seperator = NumberSeperator("numbers.txt", "even.txt", "odd.txt")
+    separator.process_files()
