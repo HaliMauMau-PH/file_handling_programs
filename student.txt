@@ -1,20 +1,20 @@
-student_1, 3.48
-student_2, 2.34
-student_3, 3.16
-student_4, 4.39
-student_5, 1.23
-student_6, 1.75
-student_7, 3.62
-student_8, 4.85
-student_9, 4.14
-student_10, 3.59
-student_11, 4.84
-student_12, 1.33
-student_13, 3.62
-student_14, 2.57
-student_15, 4.94
-student_16, 2.59
-student_17, 4.82
-student_18, 2.06
-student_19, 2.03
-student_20, 1.65
+Juan Santos, 4.13
+Carmen Reyes, 4.3
+Luis Ramos, 2.46
+Isabella Gonzales, 1.02
+Ana Mendoza, 2.4
+Isabella Bautista, 1.97
+Maria Garcia, 2.43
+Carlos Mendoza, 1.74
+Isabella Santos, 4.14
+Sofia Dela Cruz, 1.33
+Isabella Reyes, 2.09
+Isabella Mendoza, 1.08
+Carlos Ramos, 2.65
+Ana Dela Cruz, 3.62
+Sofia Santos, 3.39
+Juan Gonzales, 2.12
+Juan Gonzales, 2.44
+Maria Reyes, 3.36
+Juan Gonzales, 4.19
+Ana Aquino, 3.72
