@@ -6,7 +6,7 @@ class GWAAnalyzer:
 
     def generate_class(self):
         print(f"Making Class in {self.filename}")
-        with open(self.filename, 'r') as file:
+        with open(self.filename, 'w') as file:
             for i in range (1,21):
                 name = f"student_{i}"
                 gwa = round(random.uniform(1.0, 5.0), 2)
@@ -26,7 +26,7 @@ class GWAAnalyzer:
                 data = line.strip().split(',')
                 
                 if len(data) == 2:
-                    name = data[0].strip
+                    name = data[0].strip()
                     try:
                         gwa = float(data[1].strip())
                 
