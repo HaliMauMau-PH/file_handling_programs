@@ -34,7 +34,8 @@ class LifeStory:
                                     font=("Arial", 12, "bold"),
                                     width=15
         )
-        self.save_button.grid(row=0, column=1, padx=10)
+        self.save_button.grid(row=0, column=0, padx=10)
+        
         self.playback_button = tk.Button(self.button_frame,
                                         text="Read Playback",
                                         command=self.playback,
@@ -42,6 +43,7 @@ class LifeStory:
                                         fg="black",
                                         font=("Arial", 12, "bold"),
                                         width=12)
+        
         self.playback_button.grid(row=0, column=1, padx=10)
         
     def save_story(self):
