@@ -4,7 +4,7 @@ class LifeStory:
         
         
     def write_story(self):
-        print("Writing my life story...")
+        print(f"Writing my life story to {self.filename}...\n")
         
         try:
             with open(self.filename, "w") as file:
@@ -40,3 +40,4 @@ class LifeStory:
 if __name__ == "__main__":
     writer = LifeStory("mylife.txt")
     writer.write_story()
+    writer.playback()
