@@ -17,9 +17,25 @@ class LifeStory:
                                 wrap=tk.WORD,
                                 width=55,
                                 height=15, 
-                                font=("Helvetica", 12), 
+                                font=("Arial", 12), 
                                 )
         self.text_area.pack (padx=20, pady=10,)
+        
+        self.button_frame = tk.Frame(root,
+                                    bg = "lightblue"
+                                    )
+        self.button_frame.pack(pady=15)
+        
+        self.save_button = tk.Button(self.button_frame,
+                                    text="Save Story",
+                                    command=self.save_story,
+                                    bg="lightgreen",
+                                    fg="black",
+                                    font=("Arial", 12, "bold"),
+                                    width=15
+        )
+        self.save_button.grid(row=0, column=0, padx=10)
+        
                             
     def write_story(self):
         print(f"Writing my life story to {self.filename}...\n")
