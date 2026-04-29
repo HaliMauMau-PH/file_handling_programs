@@ -3,7 +3,8 @@ from tkinter import messagebox
 import random
 
 class IntegerTransformer:
-    def __init__(self, input_file, double_file, triple_file):
+    def __init__(self, root, input_file, double_file, triple_file):
+        self.root = root
         self.input_file = input_file
         self.double_file = double_file
         self.triple_file = triple_file
@@ -12,7 +13,7 @@ class IntegerTransformer:
         self.odd_count = 0
         
         # GUI Setup
-        self.root.title = "Integer Transformer"
+        self.root.title("Integer Transformer")
         self.root.geometry("400x500")
         self.root.config(bg="lightyellow")
         #title
@@ -38,7 +39,7 @@ class IntegerTransformer:
         
         def generate_input_file(self):
             self.console_screen.delete("1.0", tk.END)
-            self.log_to_screen("Generating random integers in console_screen.delete("1.0", tk.END)...")
+            self.log_to_screen(f"Generating random integers in {self.input_file}...")
 
             with open(self.input_file,'w') as f:
                 for _ in range (20):
@@ -80,10 +81,8 @@ class IntegerTransformer:
             print(f"Error: The file {self.input_file} was not found.")
     
 if __name__ == "__main__":
+    root = tk.Tk()
     
+    app = IntegerTransformer(root, "integers.txt", "double.txt", "triple.txt")
     
-    transformer = IntegerTransformer("integers.txt", "double.txt", "triple.txt")
-    
-    transformer.generate_input_file()
-    
-    transformer.transform_numbers()
+    root.mainloop()
