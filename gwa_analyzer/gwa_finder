@@ -4,6 +4,8 @@ class GWAAnalyzer:
     def __init__(self, filename):
         self.filename = filename
 
+        self.students = []
+    
     def generate_class(self):
         first_names = ["Juan", "Maria", "Pedro", "Ana", "Carlos", "Isabella", "Miguel", "Sofia", "Luis", "Carmen"]
         last_names = ["Dela Cruz", "Garcia", "Reyes", "Ramos", "Mendoza", "Santos", "Flores", "Gonzales", "Bautista", "Aquino"]
