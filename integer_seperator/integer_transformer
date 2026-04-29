@@ -1,3 +1,5 @@
+import tkinter as tk
+from tkinter import messagebox
 import random
 
 class IntegerTransformer:
@@ -5,6 +7,9 @@ class IntegerTransformer:
         self.input_file = input_file
         self.double_file = double_file
         self.triple_file = triple_file
+        
+        self.even_count = 0
+        self.odd_count = 0
         
     def generate_input_file(self):
         with open(self.input_file,'w') as f:
