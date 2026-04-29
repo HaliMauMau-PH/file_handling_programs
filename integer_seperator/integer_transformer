@@ -27,3 +27,17 @@ class IntegerTransformer:
                         
                 except ValueError:
                     print(f"Skipping invalid integer: {line.strip()}")
+                    
+            infile.close()
+            double_out.close()
+            triple_out.close()
+            
+            print(f"Transformation complete. Check {self.double_file} and {self.triple_file} for results.")
+                  
+        except FileNotFoundError:
+            print(f"Error: The file {self.input_file} was not found.")
+    
+if __name__ == "__main__":
+    
+    transformer = IntegerTransformer("integers.txt", "double.txt", "triple.txt")
+    transformer.transform_numbers()
