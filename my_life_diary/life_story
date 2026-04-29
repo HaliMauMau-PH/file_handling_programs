@@ -21,6 +21,22 @@ class LifeStory:
         except Exception as e:
             print(f"An error occurred while writing to the file: {e}")
             
+            
+    def playback(self):
+        print("\nPlaying back your life story...\n")
+        
+        try:
+            with open(self.filename, "r")as file:
+                story_content = file.read()
+                if story_content.strip():
+                    print(story_content, end="")
+                else:
+                    print("Your life story is empty.")
+        
+        except FileNotFoundError:
+            print(f"Error: The file {self.filename} was not found.")
+                
+                
 if __name__ == "__main__":
     writer = LifeStory("mylife.txt")
     writer.write_story()
