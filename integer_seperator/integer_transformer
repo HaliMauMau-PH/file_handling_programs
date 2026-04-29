@@ -3,3 +3,15 @@ class IntegerTransformer:
         self.input_file = input_file
         self.double_file = double_file
         self.triple_file = triple_file
+        
+    def transformer(self):
+        try:
+            infile = (self.input_file, 'r')
+            
+            double_out = open(self.double_file, 'w')
+            triple_out = open(self.triple_file, 'w')
+
+            for line in infile:
+                if not line.strip():
+                    continue
+                
