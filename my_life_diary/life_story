@@ -53,8 +53,8 @@ class LifeStory:
             messagebox.showwarning("Empty Story", "Please write something before saving.")
             return
         try:
-            with open(self.filename, "w") as file:
-                file.write(content)
+            with open(self.filename, "a") as file:
+                file.write(content + "\n")
             messagebox.showinfo("Success", f"Your story has been saved to {self.filename}.")
             self.text_area.delete("1.0", tk.END)
         except Exception as e:
