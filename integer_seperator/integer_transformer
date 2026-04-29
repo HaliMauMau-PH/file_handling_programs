@@ -11,6 +11,20 @@ class IntegerTransformer:
         self.even_count = 0
         self.odd_count = 0
         
+
+        self.root.title = "Integer Transformer"
+        self.root.geometry("400x500")
+        self.root.config(bg="lightyellow")
+        
+        self.title_lbl = tk.Label(self.root, text="Integer Transformer", font=("Helvetica", 16, "bold"), bg="lightyellow", fg="black")
+        self.title_lbl.pack(pady=20)
+        
+        
+        
+        
+        
+        
+        
     def generate_input_file(self):
         with open(self.input_file,'w') as f:
             for _ in range (20):
