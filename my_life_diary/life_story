@@ -15,3 +15,8 @@ class LifeStory:
                     more_llines = input("Do you want to add more lines? (yes/no): ").strip().lower()
                     if more_lines != yes:
                         break
+                    
+            print(f"\nSuccess! Your life story has been saved to {self.filename}.")
+            
+        except Exception as e:
+            print(f"An error occurred while writing to the file: {e}")
