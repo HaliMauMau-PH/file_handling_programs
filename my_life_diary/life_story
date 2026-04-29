@@ -13,6 +13,14 @@ class LifeStory:
         self.title_label = tk.Label(root, text="Write your story", font=("Helvetica", 16, "bold"), bg="lightblue")
         self.title_label.pack(pady=10)
 
+        self.text.area = tk.Text(root, 
+                                wrap=tk.WORD,
+                                width=55,
+                                height=15, 
+                                font=("Helvetica", 12), 
+                                )
+        self.text_area.pack (padx=20, pady=10,)
+                            
     def write_story(self):
         print(f"Writing my life story to {self.filename}...\n")
         
