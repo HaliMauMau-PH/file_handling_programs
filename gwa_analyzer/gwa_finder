@@ -9,7 +9,7 @@ class GWAAnalyzer:
     def generate_class(self):
         first_names = ["Juan", "Maria", "Pedro", "Ana", "Carlos", "Isabella", "Miguel", "Sofia", "Luis", "Carmen"]
         last_names = ["Dela Cruz", "Garcia", "Reyes", "Ramos", "Mendoza", "Santos", "Flores", "Gonzales", "Bautista", "Aquino"]
-        print(f"Making Class in {self.filename}")
+        print(f"Making Class in {self.filename}\n")
         with open(self.filename, 'w') as file:
             for _ in range (20):
                 first = random.choice(first_names)
@@ -62,7 +62,7 @@ class GWAAnalyzer:
         self.students.sort(key=lambda x: x[1])
 
         print("-" *40)
-        print("Podium")
+        print("🏆 TOP 3 STUDENTS (PODIUM) 🏆")
         print("-"*40)
         podium = ["🥇 1st Place:", "🥈 2nd Place:", "🥉 3rd Place:"]
         
