@@ -12,8 +12,8 @@ class LifeStory:
                 while True:
                     user_line = input("Enter a line: ")
                     file.write(user_line + "\n")
-                    more_lines = input("Do you want to add more lines? (yes/no): ").strip().lower()
-                    if more_lines != "yes":
+                    more_lines = input("Do you want to add more lines? (y/n): ").strip().lower()
+                    if not more_lines.startswith ("y"):
                         break
                     
             print(f"\nSuccess! Your life story has been saved to {self.filename}.")
