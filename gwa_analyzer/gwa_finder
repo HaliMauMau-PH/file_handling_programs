@@ -75,3 +75,4 @@ if __name__ == "__main__":
     
     analyzer.find_highest_gwa()
               
+    analyzer.Podium()     
