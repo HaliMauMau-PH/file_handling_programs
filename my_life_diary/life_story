@@ -34,10 +34,23 @@ class LifeStory:
                                     font=("Arial", 12, "bold"),
                                     width=15
         )
-        self.save_button.grid(row=0, column=0, padx=10)
+        self.save_button.grid(row=0, column=1, padx=10)
         
+    def save_story(self):
+        content = self.text_area.get("1.0", tk.END).strip()
         
-                            
+        if not content:
+            messagebox.showwarning("Empty Story", "Please write something before saving.")
+            return
+        try:
+            with open(self.filename, "w") as file:
+                file.write(content)
+            messagebox.showinfo("Success", f"Your story has been saved to {self.filename}.")
+            self.text_area.delete("1.0", tk.END)
+        except Exception as e:
+            messagebox.showerror("Error", f"An error occurred while saving the story: {e}")
+            
+                               
     def write_story(self):
         print(f"Writing my life story to {self.filename}...\n")
         
