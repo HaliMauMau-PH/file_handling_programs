@@ -40,23 +40,30 @@ class IntegerTransformer:
         def generate_input_file(self):
             self.console_screen.delete("1.0", tk.END)
             self.log_to_screen(f"Generating random integers in {self.input_file}...")
+            
+
 
             with open(self.input_file,'w') as f:
                 for _ in range (20):
                     random_num = random.randint(1, 100)
                     f.write(f"{random_num}\n")
                 
+            self.log_to_screen("[*] Generation Complete! Ready for transformation.\n")
+            messagebox.showinfo("Generated", "20 random numbers have been created!")
                 
     def transform_numbers(self):
+        self.even_count = 0 # Reset counters
+        self.odd_count = 0
+        
+        
         try:
-            infile = open(self.input_file, 'r')
-            
-            double_out = open(self.double_file, 'w')
-            triple_out = open(self.triple_file, 'w')
+            with open(self.input_file, 'r') as infile, \
+                 open(self.double_file, 'w') as double_out, \
+                 open(self.triple_file, 'w') as triple_out:
 
-            for line in infile:
-                if not line.strip():
-                    continue
+                for line in infile:
+                    if not line.strip():
+                        continue
                     
                 try:
                     number = int(line.strip())
@@ -69,16 +76,13 @@ class IntegerTransformer:
                         triple_out.write(f"{number} -> {cube}\n")
                         
                 except ValueError:
-                    print(f"Skipping invalid integer: {line.strip()}")
-                    
-            infile.close()
-            double_out.close()
-            triple_out.close()
+                    self.log_to_screen(f"[!] Skipping invalid data: {line.strip()}")
             
+            self.display_summary()
             print(f"Transformation complete. Check {self.double_file} and {self.triple_file} for results.")
                   
         except FileNotFoundError:
-            print(f"Error: The file {self.input_file} was not found.")
+            messagebox.showerror("File Error", "Integers file not found! Click 'Generate Data' first.")
     
 if __name__ == "__main__":
     root = tk.Tk()
