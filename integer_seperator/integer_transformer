@@ -1,7 +1,7 @@
 import random
 
 class IntegerTransformer:
-    def __init__(self, number):
+    def __init__(self, input_file, double_file, triple_file):
         self.input_file = input_file
         self.double_file = double_file
         self.triple_file = triple_file
