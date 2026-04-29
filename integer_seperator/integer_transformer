@@ -27,10 +27,10 @@ class IntegerTransformer:
         self.btn_frm = tk.Frame(self.root, bg="lightyellow")
         self.btn_frm.pack(pady=20)
         #button generate
-        self.btn_generate = tk.Button(self.btn_frame, text="1. Generate Data", command=self.generate_input_file, bg="#f1c40f", font=("Arial", 10, "bold"), width=15)
+        self.btn_generate = tk.Button(self.btn_frm, text="1. Generate Data", command=self.generate_input_file, bg="#f1c40f", font=("Arial", 10, "bold"), width=15)
         self.btn_generate.grid(row=0, column=0, padx=10)
         #button transform
-        self.btn_transform = tk.Button(self.btn_frame, text="2. Transform Data", command=self.transform_numbers, bg="#e67e22", font=("Arial", 10, "bold"), width=15)
+        self.btn_transform = tk.Button(self.btn_frm, text="2. Transform Data", command=self.transform_numbers, bg="#e67e22", font=("Arial", 10, "bold"), width=15)
         self.btn_transform.grid(row=0, column=1, padx=10)
         
         def log_to_screen(self, message):
