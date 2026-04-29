@@ -1,3 +1,17 @@
 class LifeStory:
     def __init__(self, filename):
         self.fiename = filename
+        
+        
+    def write_story(self):
+        print("Writing my life story...")
+        
+        try:
+            with open(self.filename, "w") as file:
+            
+                while true:
+                    user_line = input("Enter a line: ")
+                    file.write(user_line + "\n")
+                    more_llines = input("Do you want to add more lines? (yes/no): ").strip().lower()
+                    if more_lines != yes:
+                        break
