@@ -3,10 +3,16 @@ from tkinter import messagebox
 
 
 class LifeStory:
-    def __init__(self, filename):
+    def __init__(self, root, filename):
         self.filename = filename
-        
-        
+        self.root = root
+        self.root.title("My Life Story")
+        self.root.geometry("400x300")
+        self.root.config(bg="lightblue")
+
+        self.title_label = tk.Label(root, text="Write your story", font=("Helvetica", 16, "bold"), bg="lightblue")
+        self.title_label.pack(pady=10)
+
     def write_story(self):
         print(f"Writing my life story to {self.filename}...\n")
         
