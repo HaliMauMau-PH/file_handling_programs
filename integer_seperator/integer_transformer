@@ -4,7 +4,7 @@ class IntegerTransformer:
         self.double_file = double_file
         self.triple_file = triple_file
         
-    def transformer(self):
+    def transform_numbers(self):
         try:
             infile = (self.input_file, 'r')
             
@@ -14,4 +14,16 @@ class IntegerTransformer:
             for line in infile:
                 if not line.strip():
                     continue
-                
+                    
+                try:
+                    number = int(line.strip())
+                    
+                    if number % 2 == 0:
+                        square = number ** 2
+                        double_out.write(f"{number} -> {square}\n")
+                    else:
+                        cube = number ** 3
+                        triple_out.write(f"{number} -> {cube}\n")
+                        
+                except ValueError:
+                    print(f"Skipping invalid integer: {line.strip()}")
