@@ -83,6 +83,16 @@ class IntegerTransformer:
                   
         except FileNotFoundError:
             messagebox.showerror("File Error", "Integers file not found! Click 'Generate Data' first.")
+            
+    def display_summary(self):
+        """Prints a final report to the GUI console."""
+        self.log_to_screen("-" * 40)
+        self.log_to_screen("TRANSFORMATION SUMMARY")
+        self.log_to_screen("-" * 40)
+        self.log_to_screen(f"Even Numbers Squared: {self.even_count} (Saved to {self.double_file})")
+        self.log_to_screen(f"Odd Numbers Cubed:    {self.odd_count} (Saved to {self.triple_file})")
+        self.log_to_screen("-" * 40)
+        self.log_to_screen("[*] Process 100% Complete.")
     
 if __name__ == "__main__":
     root = tk.Tk()
