@@ -39,8 +39,12 @@ class GWAAnalyzer:
                         if gwa < highest_gwa:
                             highest_gwa = gwa
                             top_student = name
+                                
+                            self.students.append((name, gwa))
+                            
                     except ValueError:
                         print(f"skipping Invalid GWA for {name}")
+                        
             student_file.close()
         
             if top_student:
