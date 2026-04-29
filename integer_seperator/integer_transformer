@@ -33,11 +33,11 @@ class IntegerTransformer:
         self.btn_transform = tk.Button(self.btn_frm, text="2. Transform Data", command=self.transform_numbers, bg="#e67e22", font=("Arial", 10, "bold"), width=15)
         self.btn_transform.grid(row=0, column=1, padx=10)
         
-        def log_to_screen(self, message):
+    def log_to_screen(self, message):
             self.console_screen.insert(tk.END, message + "\n")
             self.console_screen.see(tk.END)
         
-        def generate_input_file(self):
+    def generate_input_file(self):
             self.console_screen.delete("1.0", tk.END)
             self.log_to_screen(f"Generating random integers in {self.input_file}...")
             
@@ -65,18 +65,20 @@ class IntegerTransformer:
                     if not line.strip():
                         continue
                     
-                try:
-                    number = int(line.strip())
-                    
-                    if number % 2 == 0:
-                        square = number ** 2
-                        double_out.write(f"{number} -> {square}\n")
-                    else:
-                        cube = number ** 3
-                        triple_out.write(f"{number} -> {cube}\n")
+                    try:
+                        number = int(line.strip())
                         
-                except ValueError:
-                    self.log_to_screen(f"[!] Skipping invalid data: {line.strip()}")
+                        if number % 2 == 0:
+                            square = number ** 2
+                            double_out.write(f"{number} -> {square}\n")
+                            self.even_count += 1
+                        else:
+                            cube = number ** 3
+                            triple_out.write(f"{number} -> {cube}\n")
+                            self.odd_count += 1
+                            
+                    except ValueError:
+                        self.log_to_screen(f"[!] Skipping invalid data: {line.strip()}")
             
             self.display_summary()
             print(f"Transformation complete. Check {self.double_file} and {self.triple_file} for results.")
@@ -85,7 +87,6 @@ class IntegerTransformer:
             messagebox.showerror("File Error", "Integers file not found! Click 'Generate Data' first.")
             
     def display_summary(self):
-        """Prints a final report to the GUI console."""
         self.log_to_screen("-" * 40)
         self.log_to_screen("TRANSFORMATION SUMMARY")
         self.log_to_screen("-" * 40)
