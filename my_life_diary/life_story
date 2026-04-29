@@ -36,6 +36,7 @@ class LifeStory:
         )
         self.save_button.grid(row=0, column=0, padx=10)
         
+        
                             
     def write_story(self):
         print(f"Writing my life story to {self.filename}...\n")
@@ -73,5 +74,7 @@ class LifeStory:
                 
 if __name__ == "__main__":
     writer = LifeStory("mylife.txt")
+    root = tk.Tk()
+    root.mainloop()
     writer.write_story()
     writer.playback()
