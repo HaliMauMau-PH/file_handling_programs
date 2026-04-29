@@ -11,13 +11,27 @@ class IntegerTransformer:
         self.even_count = 0
         self.odd_count = 0
         
-
+        # GUI Setup
         self.root.title = "Integer Transformer"
         self.root.geometry("400x500")
         self.root.config(bg="lightyellow")
-        
+        #title
         self.title_lbl = tk.Label(self.root, text="Integer Transformer", font=("Helvetica", 16, "bold"), bg="lightyellow", fg="black")
         self.title_lbl.pack(pady=20)
+        #screen
+        self.console_screen = tk.Text(self.root, width=55, height=12, bg="black", fg="#00ff00", font=("Consolas", 10))
+        self.console_screen.pack(pady=10)
+        self.console_screen.insert(tk.END, "System Ready. Waiting for data...\n")
+        #buttons
+        self.btn_frm = tk.Frame(self.root, bg="lightyellow")
+        self.btn_frm.pack(pady=20)
+        #button generate
+        self.btn_generate = tk.Button(self.btn_frame, text="1. Generate Data", command=self.generate_input_file, bg="#f1c40f", font=("Arial", 10, "bold"), width=15)
+        self.btn_generate.grid(row=0, column=0, padx=10)
+        #button transform
+        self.btn_transform = tk.Button(self.btn_frame, text="2. Transform Data", command=self.transform_numbers, bg="#e67e22", font=("Arial", 10, "bold"), width=15)
+        self.btn_transform.grid(row=0, column=1, padx=10)
+        
         
         
         
