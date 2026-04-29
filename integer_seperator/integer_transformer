@@ -32,18 +32,18 @@ class IntegerTransformer:
         self.btn_transform = tk.Button(self.btn_frame, text="2. Transform Data", command=self.transform_numbers, bg="#e67e22", font=("Arial", 10, "bold"), width=15)
         self.btn_transform.grid(row=0, column=1, padx=10)
         
+        def log_to_screen(self, message):
+            self.console_screen.insert(tk.END, message + "\n")
+            self.console_screen.see(tk.END)
         
-        
-        
-        
-        
-        
-        
-    def generate_input_file(self):
-        with open(self.input_file,'w') as f:
-            for _ in range (20):
-                random_num = random.randint(1, 100)
-                f.write(f"{random_num}\n")
+        def generate_input_file(self):
+            self.console_screen.delete("1.0", tk.END)
+            self.log_to_screen("Generating random integers in console_screen.delete("1.0", tk.END)...")
+
+            with open(self.input_file,'w') as f:
+                for _ in range (20):
+                    random_num = random.randint(1, 100)
+                    f.write(f"{random_num}\n")
                 
                 
     def transform_numbers(self):
