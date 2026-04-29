@@ -9,11 +9,11 @@ class LifeStory:
         try:
             with open(self.filename, "w") as file:
             
-                while true:
+                while True:
                     user_line = input("Enter a line: ")
                     file.write(user_line + "\n")
-                    more_llines = input("Do you want to add more lines? (yes/no): ").strip().lower()
-                    if more_lines != yes:
+                    more_lines = input("Do you want to add more lines? (yes/no): ").strip().lower()
+                    if more_lines != "yes":
                         break
                     
             print(f"\nSuccess! Your life story has been saved to {self.filename}.")
