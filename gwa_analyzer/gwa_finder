@@ -74,6 +74,13 @@ class GWAAnalyzer:
             
         print("-" *40)
 
+    def analytics(self):
+        if not self.students:
+            print("No students found.")
+            return
+        
+
+
 if __name__ == "__main__":
     analyzer = GWAAnalyzer("student.txt")
 
