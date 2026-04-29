@@ -1,0 +1,3 @@
+class LifeStory:
+    def __init__(self, filename):
+        self.fiename = filename
