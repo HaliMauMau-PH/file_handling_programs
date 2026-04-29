@@ -47,6 +47,8 @@ class GWAAnalyzer:
 
         except FileNotFoundError:
             print(f"Error: the file {self.filename} was not found") 
+    def Podium(self):
+        
 
 if __name__ == "__main__":
     analyzer = GWAAnalyzer("student.txt")
