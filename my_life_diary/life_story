@@ -35,6 +35,14 @@ class LifeStory:
                                     width=15
         )
         self.save_button.grid(row=0, column=1, padx=10)
+        self.playback_button = tk.Button(self.button_frame,
+                                        text="Read Playback",
+                                        command=self.playback,
+                                        bg="orange",
+                                        fg="black",
+                                        font=("Arial", 12, "bold"),
+                                        width=12)
+        self.playback_button.grid(row=0, column=1, padx=10)
         
     def save_story(self):
         content = self.text_area.get("1.0", tk.END).strip()
