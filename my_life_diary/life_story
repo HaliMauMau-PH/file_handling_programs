@@ -20,3 +20,7 @@ class LifeStory:
             
         except Exception as e:
             print(f"An error occurred while writing to the file: {e}")
+            
+if __name__ == "__main__":
+    writer = LifeStory("mylife.txt")
+    writer.write_story()
