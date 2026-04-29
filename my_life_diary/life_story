@@ -1,6 +1,6 @@
 class LifeStory:
     def __init__(self, filename):
-        self.fiename = filename
+        self.filename = filename
         
         
     def write_story(self):
