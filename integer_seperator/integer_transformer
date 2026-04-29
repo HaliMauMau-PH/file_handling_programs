@@ -15,7 +15,7 @@ class IntegerTransformer:
                 
     def transform_numbers(self):
         try:
-            infile = (self.input_file, 'r')
+            infile = open(self.input_file, 'r')
             
             double_out = open(self.double_file, 'w')
             triple_out = open(self.triple_file, 'w')
