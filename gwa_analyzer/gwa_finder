@@ -80,7 +80,7 @@ class GWAAnalyzer:
             return
         
         total_students = len(self.students)
-        passed = sum(1 for s in self.students if s[1] <= 3.00):
+        passed = sum(1 for s in self.students if s[1] <= 3.00)
         failed = total_students - passed
         
         average_gwa = sum(s[1] for s in self.students) / total_students
