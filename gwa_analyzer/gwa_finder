@@ -60,7 +60,14 @@ class GWAAnalyzer:
         print("-"*40)
         podium = ["🥇 1st Place:", "🥈 2nd Place:", "🥉 3rd Place:"]
         
-        
+        for i in range(min (3, len(self.students))):
+            student_name = self.students[i][0]
+            student_gwa = self.students[i][1]
+            
+            print(f"{podium[i]} {student_name} with GWA: {student_gwa}")
+            
+        print("-" *40)
+
 if __name__ == "__main__":
     analyzer = GWAAnalyzer("student.txt")
 
