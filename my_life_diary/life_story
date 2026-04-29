@@ -7,7 +7,7 @@ class LifeStory:
         self.filename = filename
         self.root = root
         self.root.title("My Life Story")
-        self.root.geometry("400x300")
+        self.root.geometry("400x400")
         self.root.config(bg="lightblue")
 
         self.title_label = tk.Label(root, text="Write your story", font=("Helvetica", 16, "bold"), bg="lightblue")
@@ -49,27 +49,7 @@ class LifeStory:
             self.text_area.delete("1.0", tk.END)
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred while saving the story: {e}")
-            
-                               
-    def write_story(self):
-        print(f"Writing my life story to {self.filename}...\n")
-        
-        try:
-            with open(self.filename, "w") as file:
-            
-                while True:
-                    user_line = input("Enter a line: ")
-                    file.write(user_line + "\n")
-                    more_lines = input("Do you want to add more lines? (y/n): ").strip().lower()
-                    if not more_lines.startswith ("y"):
-                        break
-                    
-            print(f"\nSuccess! Your life story has been saved to {self.filename}.")
-            
-        except Exception as e:
-            print(f"An error occurred while writing to the file: {e}")
-            
-            
+                                             
     def playback(self):
         print("\nPlaying back your life story...\n")
         
@@ -77,17 +57,17 @@ class LifeStory:
             with open(self.filename, "r")as file:
                 story_content = file.read()
                 if story_content.strip():
-                    print(story_content, end="")
+                    messagebox.showinfo("Story Playback", story_content)
                 else:
-                    print("Your life story is empty.")
+                    messagebox.showwarning("Empty", "Your life story is empty.")
         
         except FileNotFoundError:
-            print(f"Error: The file {self.filename} was not found.")
+            messagebox.showerror("Error", f"The file {self.filename} was not found. Save a story first!")
                 
                 
 if __name__ == "__main__":
     root = tk.Tk()
-    writer = LifeStory("mylife.txt")
+    
+    writer = LifeStory(root, "mylife.txt")
+    
     root.mainloop()
-    writer.write_story()
-    writer.playback()
