@@ -40,7 +40,7 @@ class GWAAnalyzer:
                             highest_gwa = gwa
                             top_student = name
                                 
-                            self.students.append((name, gwa))
+                        self.students.append((name, gwa))
                             
                     except ValueError:
                         print(f"skipping Invalid GWA for {name}")
